@@ -42,7 +42,7 @@ int main() {
         ImGui::SFML::Update(window, deltaClock.restart());
 
         ImGui::Begin("Demo window");
-        ImGui::Button("Hello!");
+        ImGui::TextColored(sf::Color::Yellow, "Hi! :)");
 
         if (ImGui::BeginMenuBar())
         {
@@ -56,7 +56,6 @@ int main() {
             ImGui::EndMenuBar();
         }
 
-
         ImGui::ColorEdit4("Color", my_color);
 
         shape.setFillColor(
@@ -67,6 +66,12 @@ int main() {
                 my_color[3] * 255
             )
         );
+
+        float position_x, position_y;
+        ImGui::SliderFloat("X Position", &position_x, 0.0f, (float)SCREEN_WIDTH);
+        ImGui::SliderFloat("Y Position", &position_y, 0.0f, (float)SCREEN_HEIGHT);
+
+        shape.setPosition(position_x, position_y);
 
         ImGui::End();
 
