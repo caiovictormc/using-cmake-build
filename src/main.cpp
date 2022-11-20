@@ -44,18 +44,6 @@ int main() {
         ImGui::Begin("Demo window");
         ImGui::TextColored(sf::Color::Yellow, "Hi! :)");
 
-        if (ImGui::BeginMenuBar())
-        {
-            if (ImGui::BeginMenu("File"))
-            {
-                if (ImGui::MenuItem("Openx..", "Ctrl+O")) { /* Do stuff */ }
-                if (ImGui::MenuItem("Save", "Ctrl+S"))   { /* Do stuff */ }
-                if (ImGui::MenuItem("Close", "Ctrl+W"))  { }
-                ImGui::EndMenu();
-            }
-            ImGui::EndMenuBar();
-        }
-
         ImGui::ColorEdit4("Color", my_color);
 
         shape.setFillColor(
